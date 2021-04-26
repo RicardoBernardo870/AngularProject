@@ -1,0 +1,48 @@
+
+<div class='container'>
+    <div class="card">
+        <div class="card-header">
+            <h2>TEMPO ATUAL</h2>
+            <p>{{ today | date: 'shortTime'}}</p>
+        </div>
+        <div class="card-body">
+            <img src="{{ iconImg }}">
+            <h1>{{ weather.temp }}&deg; </h1>
+        </div>
+        <div class="card-footer">
+            <p>{{ description }}</p>
+        </div>
+    </div>
+
+<section>
+    <div class="left">
+        <ul class="detail-item ">
+            <li>Real™</li>
+            <li>{{ weather.app_temp }} C&deg;</li>
+        </ul>
+        <ul class="detail-item ">
+            <li>Vento</li>
+            <li>{{ weather.wind_cdir_full }}</li>
+        </ul>
+        <ul class="detail-item ">
+            <li>Rajadas de vento</li>
+            <li >{{ weather.wind_spd * 3.6 | number}} Km/h</li>
+        </ul>
+        <ul class="detail-item">
+            <li>Humidade</li>
+            <li>{{ weather.rh | number }} %</li>
+        </ul>
+    <ul class="detail-item">
+        <li>Cobertura de Nuvens</li>
+        <li>{{ weather.clouds | number }} %</li>
+    </ul>
+    <ul class="detail-item">
+        <li>Chuva</li>
+        <li>{{ weather.precip | number }} %</li>
+    </ul>
+    <ul class="detail-item">
+        <li>Visibilidade</li>
+        <li>{{ weather.vis | number: '1.1-1'}} %</li>
+    </ul>
+    </div>
+</section>

@@ -1,0 +1,13 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.container img {
+  width: 100%;
+  object-fit: cover;
+  object-position: right;
+  height: 450px;
+  border-bottom: 2px solid orangered;
+}

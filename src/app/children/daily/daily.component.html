@@ -1,0 +1,30 @@
+
+<section>
+ <div class='container'>
+  <ul class="card">
+  <li class="minicard" *ngFor="let days of weather">
+    <div class='date'>
+      <li class="format">
+        {{ days.datetime | date: 'EEEE'}}
+        <span>
+          {{ days.datetime | date: 'dd/MM'}}
+        </span>
+      </li>
+       <li>
+         <img src="https://www.weatherbit.io/static/img/icons/{{days.weather.icon}}.png">
+        </li>
+       <li>
+         <span class="temp1">
+           {{ days.temp }} C &deg;
+          </span>/ 
+          <span class="temp2">
+            {{ days.min_temp }}
+          </span>
+        </li> 
+       <i class=" icon fas fa-tint"> {{ days.rh }}%</i>
+    </div>
+   </li>
+  </ul>
+ </div>
+</section>
+

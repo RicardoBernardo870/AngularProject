@@ -1,0 +1,62 @@
+<article>
+    <div class='container'>
+        <ul class="card">
+            <li class="minicard" *ngFor="let hourly of weather.slice(0, 24) let i = index ;">
+                <div class='date'>
+            <li class="format">
+                {{ hourly.timestamp_local | date: 'H'}}
+                <span>
+                    {{ hourly.timestamp_local | date: 'dd/MM'}}
+                </span>
+            </li>
+            <li>
+                <img src="https://www.weatherbit.io/static/img/icons/{{hourly.weather.icon}}.png">
+            </li>
+            <li>
+                <span class="temp1">
+                    {{ hourly.temp }} C &deg;
+                </span>
+            </li>
+            <i class=" icon fas fa-tint"> {{ hourly.rh }}%</i>
+            <svg (click)="setIndex(i)" [class.active]="selectedIndex === i" class="icon-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="6"
+                viewBox="0 0 10 6" role="img" aria-labelledby="chevronSVG">
+                <title id="chevronSVG">Chevron down</title>
+                <path d="M10 .969L9.037 0 5 4.063.963 0 0 .969 5 6z"></path>
+            </svg>
+            
+    </div>
+
+
+       <div class="left" [class.active]="selectedIndex === i">
+            <ul class="detail-item ">
+                <li>{{ hourly.weather.description }}</li>
+            </ul>
+            <ul class="detail-item ">
+                <li>Vento</li>
+                <li>{{ hourly.wind_cdir_full }}</li>
+            </ul>
+            <ul class="detail-item ">
+                <li>Rajadas de vento</li>
+                <li>{{ hourly.wind_spd * 3.6 | number: '1.2-2'}} Km/h</li>
+            </ul>
+            <ul class="detail-item">
+                <li>Humidade</li>
+                <li>{{ hourly.rh | number }} %</li>
+            </ul>
+            <ul class="detail-item">
+                <li>Cobertura de Nuvens</li>
+                <li>{{ hourly.clouds | number }} %</li>
+            </ul>
+            <ul class="detail-item">
+                <li>Chuva</li>
+                <li>{{ hourly.precip | number }} %</li>
+            </ul>
+            <ul class="detail-item">
+                <li>Visibilidade</li>
+                <li>{{ hourly.vis | number: '1.1-1'}} %</li>
+            </ul>
+        </div>
+      </li>
+     </ul>
+    </div>
+</article>

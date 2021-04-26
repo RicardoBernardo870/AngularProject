@@ -1,0 +1,15 @@
+<header>
+  <app-nav></app-nav>
+   <ng-container *ngIf="router.routerState.snapshot.url == '/'">
+    <div class="container">
+      <img src="assets/1920x450.jpg" alt="background image">
+    
+    
+    <app-search></app-search>
+    <app-local></app-local>
+    
+  </div>
+</ng-container>
+</header>
+
+

@@ -1,0 +1,12 @@
+    
+    <div class="search">
+    
+      <div>
+        <i class="fa fa-search icon"></i>
+      </div>
+    
+    <form [formGroup]="weatherSearchForm"  >
+     <input type="search" class="search-box" placeholder="Procurar local, código postal" formControlName="city" (keyup.enter)="sendForm(weatherSearchForm.value)"/>
+   </form> 
+  </div>
+  

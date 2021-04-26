@@ -1,0 +1,47 @@
+<nav>
+    <div class="navbar">
+        <div class="logo-wrapper"><img src="assets/accuweather.svg"></div>
+        
+         <button class='toggle-button' (click)="showMenu()">
+             <i class="ham fas fa-bars"></i>
+             <i class="close fas fa-times"></i>
+            </button>
+          
+            <div  class="navbar-links">
+                
+            
+            <ul>
+                <li><a href="#">RADAR E MAPAS</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">MAU TEMPO</a></li>
+                <li><a href="#">PREVISOES PERSONALIZADAS</a></li>
+                <li><a href="#">DEFINIÇÕES</a></li>
+                
+            </ul>
+        </div>
+        <i class="fas fa-cog"></i>
+    </div>
+</nav>
+
+
+<ng-container *ngIf="router.routerState.snapshot.url !== '/'" >
+
+<nav>
+    <div class="navbar">
+        <div class="logo-wrapper"><img src="assets/accuweather.svg"></div>
+        <button class='toggle-button' (click)="showMenu()">
+         </button>
+          <div  class="navbar-links">
+            <ul>
+                <li><a href="#">RADAR E MAPAS</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">MAU TEMPO</a></li>
+                <li><a href="#">PREVISOES PERSONALIZADAS</a></li>
+                <li><a href="#">DEFINIÇÕES</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</ng-container>
+
